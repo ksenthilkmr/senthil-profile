@@ -78,9 +78,9 @@ function JavaDeveloperProfile({
     description: 'Built RESTful APIs and database optimization'
   }];
   return <div className="w-full bg-gradient-to-b from-slate-50 to-white" data-id={dataId}>
-      {/* Hero Section with Profile Photo */}
+      {/* Hero Section with Profile Photo - Adjusted for better viewport fit */}
       <div className="container mx-auto px-4">
-        <div className="flex gap-8 py-20 lg:py-32 items-center justify-center flex-col">
+        <div className="flex gap-5 py-10 lg:py-16 items-center justify-center flex-col min-h-[85vh] md:min-h-[80vh]">
           {/* Profile Photo Section */}
           <motion.div initial={{
           opacity: 0,
@@ -90,8 +90,8 @@ function JavaDeveloperProfile({
           scale: 1
         }} transition={{
           duration: 0.5
-        }} className="relative">
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl">
+        }} className="relative mt-4">
+            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl">
               <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=faces,center" alt="Java Developer Profile" className="w-full h-full object-cover" />
             </div>
             <motion.div className="absolute -bottom-2 -right-2 bg-blue-600 text-white rounded-full p-2 shadow-lg" initial={{
@@ -119,9 +119,9 @@ function JavaDeveloperProfile({
             </Button>
           </motion.div>
           <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-3xl tracking-tighter text-center font-regular">
+            <h1 className="text-4xl md:text-6xl max-w-3xl tracking-tighter text-center font-regular">
               <span className="text-slate-900">I build</span>
-              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
+              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-2 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => <motion.span key={index} className="absolute font-semibold text-blue-600" initial={{
                 opacity: 0,
@@ -141,13 +141,13 @@ function JavaDeveloperProfile({
               </span>
               <span className="text-slate-900">Java applications</span>
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-slate-600 max-w-2xl text-center">
+            <p className="text-base md:text-lg leading-relaxed tracking-tight text-slate-600 max-w-2xl text-center mt-2">
               Senior Java Developer specializing in building high-performance,
               scalable enterprise applications using Spring Boot, microservices,
               and cloud technologies.
             </p>
           </div>
-          <div className="flex flex-row gap-3 flex-wrap justify-center">
+          <div className="flex flex-row gap-3 flex-wrap justify-center mt-3">
             <Button size="lg" className="gap-4">
               View My Work <MoveRight className="w-4 h-4" />
             </Button>
