@@ -2,14 +2,18 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MoveRight, Mail, Github, Linkedin, Code2, Database, Server, Coffee, Award, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import profilePic from '../img/Senthil-profile.jpeg';
+
 interface JavaDeveloperProfileProps {
   'data-id'?: string;
 }
+
 function JavaDeveloperProfile({
   'data-id': dataId
 }: JavaDeveloperProfileProps) {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(() => ['scalable', 'enterprise', 'robust', 'efficient', 'modern'], []);
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (titleNumber === titles.length - 1) {
@@ -18,8 +22,10 @@ function JavaDeveloperProfile({
         setTitleNumber(titleNumber + 1);
       }
     }, 2000);
+
     return () => clearTimeout(timeoutId);
   }, [titleNumber, titles]);
+
   const skills = [{
     name: 'Java',
     icon: Coffee,
@@ -63,19 +69,19 @@ function JavaDeveloperProfile({
   }];
   const experience = [{
     role: 'Senior Java Developer',
-    company: 'Tech Solutions Inc.',
-    period: '2021 - Present',
-    description: 'Leading backend development for enterprise applications'
+    company: 'TATA Consultancy Limited',
+    period: '2023 - Present',
+    description: 'Leading backend development for Guidewire application for insurance industry'
+  }, {
+    role: 'Java Engineer',
+    company: 'JSainsburys PLC',
+    period: '2022 - 2023',
+    description: 'Developed microservices architecture for the UK Retailer'
   }, {
     role: 'Java Developer',
-    company: 'Digital Innovations',
-    period: '2019 - 2021',
-    description: 'Developed microservices architecture for fintech applications'
-  }, {
-    role: 'Junior Java Developer',
-    company: 'StartUp Labs',
-    period: '2017 - 2019',
-    description: 'Built RESTful APIs and database optimization'
+    company: 'Torry Harris Integration Solutions',
+    period: '2022 - 2011',
+    description: 'Built Webapplications and Microservices'
   }];
   return <div className="w-full bg-gradient-to-b from-slate-50 to-white" data-id={dataId}>
       {/* Hero Section with Profile Photo - Adjusted for better viewport fit */}
@@ -90,20 +96,11 @@ function JavaDeveloperProfile({
           scale: 1
         }} transition={{
           duration: 0.5
-        }} className="relative mt-4">
+        }} className="relative mt-4 flex flex-col items-center">
+            <h2 className="text-5xl font-bold text-center mb-4 font-playfair">SENTHILKUMAR</h2>
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=faces,center" alt="Java Developer Profile" className="w-full h-full object-cover" />
+              <img src={profilePic} alt="Java Developer Profile" className="w-full h-full object-cover" />
             </div>
-            <motion.div className="absolute -bottom-2 -right-2 bg-blue-600 text-white rounded-full p-2 shadow-lg" initial={{
-            scale: 0
-          }} animate={{
-            scale: 1
-          }} transition={{
-            delay: 0.5,
-            type: 'spring'
-          }}>
-              <Coffee className="w-5 h-5" />
-            </motion.div>
           </motion.div>
           <motion.div initial={{
           opacity: 0,
@@ -115,7 +112,7 @@ function JavaDeveloperProfile({
           duration: 0.5
         }}>
             <Button variant="secondary" size="sm" className="gap-4">
-              Available for opportunities <MoveRight className="w-4 h-4" />
+              Developer | Cloud Practitioner | Architect | Mentor
             </Button>
           </motion.div>
           <div className="flex gap-4 flex-col">
@@ -227,7 +224,7 @@ function JavaDeveloperProfile({
                 Passionate Java Developer
               </h3>
               <p className="text-slate-600 mb-4">
-                With over 6 years of experience in Java development, I've built
+                With over 14 years of experience in Java development, I've built
                 everything from high-throughput microservices to elegant
                 enterprise applications. My passion lies in creating clean,
                 maintainable code that solves real business problems.
@@ -441,4 +438,5 @@ function JavaDeveloperProfile({
       </div>
     </div>;
 }
+
 export { JavaDeveloperProfile };
